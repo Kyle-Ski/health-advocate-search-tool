@@ -114,6 +114,30 @@ export default function Home() {
               </h3>
               <span className="text-sm text-gray-500">{advocate.yearsOfExperience} years</span>
             </div>
+
+            <div className="space-y-2 text-sm text-gray-600">
+              <p><span className="font-medium">City:</span> {advocate.city}</p>
+              <p><span className="font-medium">Degree:</span> {advocate.degree}</p>
+              <p><span className="font-medium">Phone:</span>
+                <a href={`tel:${advocate.phoneNumber}`} className="text-blue-600 hover:text-blue-800 ml-1">
+                  {advocate.phoneNumber}
+                </a>
+              </p>
+            </div>
+
+            <div className="mt-3">
+              <p className="text-sm font-medium text-gray-700 mb-2">Specialties:</p>
+              <div className="flex flex-wrap gap-1">
+                {advocate.specialties.map((s) => (
+                  <span
+                    key={s}
+                    className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
       </div>
