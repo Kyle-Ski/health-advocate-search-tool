@@ -56,7 +56,8 @@ export default function Home() {
       </div>
       <br />
       <br />
-      <div className="overflow-x-auto">
+      {/* Desktop Table */}
+      <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
           <thead className="bg-gray-50">
             <tr>
@@ -98,6 +99,23 @@ export default function Home() {
             })}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile Cards */}
+      <div className="md:hidden space-y-4">
+        {filteredAdvocates.map((advocate, index) => (
+          <div
+            key={index}
+            className="bg-white p-4 rounded-lg shadow-sm border border-gray-200"
+          >
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="text-lg font-medium text-gray-900">
+                {advocate.firstName} {advocate.lastName}
+              </h3>
+              <span className="text-sm text-gray-500">{advocate.yearsOfExperience} years</span>
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   );
