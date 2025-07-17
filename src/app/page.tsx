@@ -18,7 +18,7 @@ export default function Home() {
     });
   }, []);
 
-  const onChange = (e: any) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     setSearchTerm(inputValue);
 
@@ -26,11 +26,13 @@ export default function Home() {
     const filteredAdvocates = advocates.filter((advocate) => {
       const searchLower = inputValue.toLowerCase();
       return (
-        advocate.firstName.includes(searchLower) ||
-        advocate.lastName.includes(searchLower) ||
-        advocate.city.includes(searchLower) ||
-        advocate.degree.includes(searchLower) ||
-        advocate.specialties.includes(searchLower) ||
+        advocate.firstName.toLowerCase().includes(searchLower) ||
+        advocate.lastName.toLowerCase().includes(searchLower) ||
+        advocate.city.toLowerCase().includes(searchLower) ||
+        advocate.degree.toLowerCase().includes(searchLower) ||
+        advocate.specialties.some((specialty: string) =>
+          specialty.toLowerCase().includes(searchLower)
+        ) ||
         advocate.yearsOfExperience.toString().includes(searchLower)
       );
     });
@@ -41,6 +43,7 @@ export default function Home() {
   const onClick = () => {
     console.log(advocates);
     setFilteredAdvocates(advocates);
+    setSearchTerm("");
   };
 
   return (
@@ -53,7 +56,11 @@ export default function Home() {
         <p>
           Searching for: <span id="search-term">{searchTerm}</span>
         </p>
-        <input style={{ border: "1px solid black" }} onChange={onChange} />
+        <input
+          style={{ border: "1px solid black" }}
+          onChange={onChange}
+          value={searchTerm}
+        />
         <button onClick={onClick}>Reset Search</button>
       </div>
       <br />
