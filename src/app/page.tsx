@@ -26,6 +26,7 @@ export default function Home() {
     console.log("filtering advocates...");
     const filteredAdvocates = advocates.filter((advocate) => {
       const searchLower = inputValue.toLowerCase();
+      const yearsString = advocate.yearsOfExperience?.toString() || '';
       return (
         advocate.firstName.toLowerCase().includes(searchLower) ||
         advocate.lastName.toLowerCase().includes(searchLower) ||
@@ -34,7 +35,7 @@ export default function Home() {
         advocate.specialties.some((specialty: string) =>
           specialty.toLowerCase().includes(searchLower)
         ) ||
-        advocate.yearsOfExperience.toString().includes(searchLower)
+        yearsString.includes(searchLower)
       );
     });
 
