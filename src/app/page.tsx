@@ -56,9 +56,9 @@ export default function Home() {
           <img
             src="/solace.svg"
             alt="Solace Logo"
-            className="h-12 w-12"
+            className="h-14 w-auto"
           />
-          <h1 className="text-3xl font-bold text-gray-900">Solace Advocates</h1>
+          <h1 className="text-3xl font-bold text-gray-900 font-mollie">Solace Advocates</h1>
         </div>
         <br />
         <br />
