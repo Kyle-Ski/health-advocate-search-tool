@@ -16,7 +16,7 @@ export default function DesktopTable({ advocates }: { advocates: any[] }) {
                 <tbody className="bg-white divide-y divide-gray-200">
                     {advocates.map((advocate, index: number) => (
                         <AdvocateTableRow
-                            key={index}
+                            key={`${advocate.firstName}-${advocate.lastName}-${index}`}
                             advocate={advocate}
                             index={index}
                         />
