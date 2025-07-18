@@ -49,24 +49,26 @@ export default function Home() {
   };
 
   return (
-    <main style={{ margin: "24px" }}>
-      <h1>Solace Advocates</h1>
-      <br />
-      <br />
-      <div>
-        <p>Search</p>
-        <p>
-          Searching for: <span id="search-term">{searchTerm}</span>
-        </p>
-        <input
-          style={{ border: "1px solid black" }}
-          onChange={onChange}
-          value={searchTerm}
-        />
-        <button onClick={onClick}>Reset Search</button>
+    <main className="min-h-screen bg-gray-50 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1>Solace Advocates</h1>
+        <br />
+        <br />
+        <div>
+          <p>Search</p>
+          <p>
+            Searching for: <span id="search-term">{searchTerm}</span>
+          </p>
+          <input
+            style={{ border: "1px solid black" }}
+            onChange={onChange}
+            value={searchTerm}
+          />
+          <button onClick={onClick}>Reset Search</button>
+        </div>
+        <br />
+        <br />
       </div>
-      <br />
-      <br />
       {/* Desktop Table */}
       <DesktopTable advocates={filteredAdvocates} />
 
