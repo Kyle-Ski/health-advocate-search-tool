@@ -58,7 +58,7 @@ export default function Home() {
             alt="Solace Logo"
             className="h-14 w-auto"
           />
-          <h1 className="text-3xl font-bold text-gray-900 font-mollie">Solace Advocates</h1>
+          <h1 className="text-3xl font-bold text-gray-900 font-cormorant">Solace Advocates</h1>
         </div>
         <br />
         <br />
