@@ -51,7 +51,15 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1>Solace Advocates</h1>
+        {/* Header */}
+        <div className="flex items-center gap-4 mb-8">
+          <img
+            src="/solace.svg"
+            alt="Solace Logo"
+            className="h-12 w-12"
+          />
+          <h1 className="text-3xl font-bold text-gray-900">Solace Advocates</h1>
+        </div>
         <br />
         <br />
         <div>
